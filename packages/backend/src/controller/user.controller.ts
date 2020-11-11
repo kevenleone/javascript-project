@@ -25,7 +25,10 @@ class User {
   }
 
   public async update (req: Request, res: Response): Promise<void> {
-    const { body, params: { id } } = req
+    const {
+      body,
+      params: { id }
+    } = req
     const user = await UserModel.updateOne({ _id: id }, body)
     res.send({ user })
   }
